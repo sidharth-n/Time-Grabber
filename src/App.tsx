@@ -5,7 +5,7 @@ import ResultPage from "./ResultPage";
 const App: React.FC = () => {
   const [inputValue, setInputValue] = useState<string | null>(null);
   const [isValidAge, setIsValidAge] = useState<boolean>(false);
-  const [age, setAge] = useState(0);
+  const [inputAge, setInputAge] = useState(0);
 
   const handlePaste = (text: string) => {
     const age = parseInt(text, 10); // Convert string to integer
@@ -13,7 +13,7 @@ const App: React.FC = () => {
     if (age >= 1 && age <= 120) {
       setInputValue(text);
       setIsValidAge(true);
-      setAge(age);
+      setInputAge(age);
     } else {
       window.alert("Please enter a valid age between 1 and 120.");
     }
@@ -22,7 +22,7 @@ const App: React.FC = () => {
   return (
     <>
       {isValidAge ? (
-        <ResultPage age={age} />
+        <ResultPage age={inputAge} />
       ) : (
         <InputPage onPaste={handlePaste} />
       )}
