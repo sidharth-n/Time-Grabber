@@ -1,6 +1,10 @@
 import React from "react";
 import SecondsLeft from "./components/SecondsLeft.tsx";
 import BeatsLeft from "./components/BeatsLeft";
+import DaysLeft from "./components/DaysLeft";
+import MinutesLeft from "./components/MinutesLeft";
+import BreathsLeft from "./components/BreathsLeft";
+import WeeksLeft from "./components/WeeksLeft";
 
 interface Review {
   value: string;
@@ -35,6 +39,36 @@ const ResultPage: React.FC<{ age: number }> = ({ age }) => {
         </div>
       </a>
       <a className="block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring">
+        <h2 className="mt-2 font-bold">Years left</h2>
+        <div className="flow-root mt-3">
+          <dl className="-my-3 divide-y divide-gray-100 text-sm">{ageLeft}</dl>
+        </div>
+      </a>
+      <a className="block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring">
+        <h2 className="mt-2 font-bold">Weeks left</h2>
+        <div className="flow-root mt-3">
+          <dl className="-my-3 divide-y divide-gray-100 text-sm">
+            <WeeksLeft timeLeft={ageLeft} />
+          </dl>
+        </div>
+      </a>
+      <a className="block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring">
+        <h2 className="mt-2 font-bold">Days left</h2>
+        <div className="flow-root mt-3">
+          <dl className="-my-3 divide-y divide-gray-100 text-sm">
+            <DaysLeft timeLeft={ageLeft} />
+          </dl>
+        </div>
+      </a>
+      <a className="block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring">
+        <h2 className="mt-2 font-bold">Minutes left</h2>
+        <div className="flow-root mt-3">
+          <dl className="-my-3 divide-y divide-gray-100 text-sm">
+            <MinutesLeft timeLeft={ageLeft} />
+          </dl>
+        </div>
+      </a>
+      <a className="block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring">
         <h2 className="mt-2 font-bold">Seconds left</h2>
         <div className="flow-root mt-3">
           <dl className="-my-3 divide-y divide-gray-100 text-sm">
@@ -47,6 +81,22 @@ const ResultPage: React.FC<{ age: number }> = ({ age }) => {
         <div className="flow-root mt-3">
           <dl className="-my-3 divide-y divide-gray-100 text-sm">
             <BeatsLeft timeLeft={ageLeft} />
+          </dl>
+        </div>
+      </a>
+      <a className="block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring">
+        <h2 className="mt-2 font-bold">Sunrises left</h2>
+        <div className="flow-root mt-3">
+          <dl className="-my-3 divide-y divide-gray-100 text-sm">
+            <DaysLeft timeLeft={ageLeft} />
+          </dl>
+        </div>
+      </a>
+      <a className="block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring">
+        <h2 className="mt-2 font-bold">Breaths left</h2>
+        <div className="flow-root mt-3">
+          <dl className="-my-3 divide-y divide-gray-100 text-sm">
+            <BreathsLeft timeLeft={ageLeft} />
           </dl>
         </div>
       </a>
