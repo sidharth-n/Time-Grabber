@@ -1,11 +1,14 @@
 import React from "react";
 import SecondsLeft from "./components/SecondsLeft.tsx";
+import BeatsLeft from "./components/BeatsLeft";
 
 interface Review {
   value: string;
 }
 
 const ResultPage: React.FC<{ age: number }> = ({ age }) => {
+  const maxAge = 70;
+  const ageLeft = maxAge - age;
   return (
     <div className="content-area flex flex-col justify-center items-stretch gap-4 p-4 pb-6">
       <li className="flex items-center gap-4">
@@ -35,7 +38,15 @@ const ResultPage: React.FC<{ age: number }> = ({ age }) => {
         <h2 className="mt-2 font-bold">Seconds left</h2>
         <div className="flow-root mt-3">
           <dl className="-my-3 divide-y divide-gray-100 text-sm">
-            <SecondsLeft currentAge={age} maxAge={70} />
+            <SecondsLeft timeLeft={ageLeft} />
+          </dl>
+        </div>
+      </a>
+      <a className="block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring">
+        <h2 className="mt-2 font-bold">Heartbeats left</h2>
+        <div className="flow-root mt-3">
+          <dl className="-my-3 divide-y divide-gray-100 text-sm">
+            <BeatsLeft timeLeft={ageLeft} />
           </dl>
         </div>
       </a>
