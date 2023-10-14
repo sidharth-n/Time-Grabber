@@ -17,7 +17,7 @@ const ResultPage: React.FC<{ age: number }> = ({ age }) => {
     <div className="content-area flex flex-col justify-center items-stretch gap-4 p-4 pb-6">
       <li className="flex items-center gap-4">
         <img
-          src="https://images.unsplash.com/photo-1592921870789-04563d55041c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+          src="https://openclipart.org/image/800px/248459"
           alt=""
           className="h-16 w-16 rounded-xl object-cover"
         />
