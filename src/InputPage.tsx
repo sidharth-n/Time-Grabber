@@ -9,7 +9,7 @@ const InputPage: React.FC<{ onPaste: (text: string) => void }> = ({
 
   const handlePaste = async () => {
     if (navigator.clipboard) {
-      const text = await navigator.clipboard.readText();
+      const text = inputValue;
       setInputValue(text);
       onPaste(text);
     }
@@ -33,6 +33,7 @@ const InputPage: React.FC<{ onPaste: (text: string) => void }> = ({
           type="search"
           placeholder="Type your age here"
           ref={inputRef}
+          value={inputValue}
         />
         <button
           type="button"
