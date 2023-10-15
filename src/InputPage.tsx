@@ -24,7 +24,7 @@ const InputPage: React.FC<{ onPaste: (text: string) => void }> = ({
           className="h-10 w-full rounded-lg border-none bg-white pe-10 ps-4 text-sm shadow-sm "
           id="search"
           type="search"
-          placeholder="Type in your age in numbers (eg:24.3)"
+          placeholder="Type your age in numbers (eg:24.3)"
           value={inputValue}
           onChange={handleInputChange}
         />
