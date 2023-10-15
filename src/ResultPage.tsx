@@ -23,7 +23,7 @@ const ResultPage: React.FC<{ age: number }> = ({ age }) => {
         />
 
         <div>
-          <h3 className="text-[20px] text-gray-900">Your Life Status</h3>
+          <h3 className="text-[20px] text-gray-900 ">Your Life Status</h3>
           <dl className="mt-0.5 space-y-px text-[15px] text-gray-500">
             <div>
               <dd className="inline">based on average lifespan : 70</dd>
@@ -31,6 +31,9 @@ const ResultPage: React.FC<{ age: number }> = ({ age }) => {
           </dl>
         </div>
       </li>
+      <h2 class="text-3xl font-bold sm:text-4xl self-center">
+        Remaining assets
+      </h2>
       <div className="grid grid-cols-2 gap-4">
         <a className="block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring">
           <h2 className="mt-2 font-bold">Current age</h2>
