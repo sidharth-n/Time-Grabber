@@ -6,6 +6,7 @@ import MinutesLeft from "./components/MinutesLeft";
 import BreathsLeft from "./components/BreathsLeft";
 import WeeksLeft from "./components/WeeksLeft";
 import MonthsLeft from "./components/MonthsLeft";
+import HoursLeft from "./components/HoursLeft";
 
 interface Review {
   value: string;
@@ -193,7 +194,7 @@ const ResultPage: React.FC<{ age: number }> = ({ age }) => {
           <h2 className="mt-2 font-bold">Hours </h2>
           <div className="flow-root mt-3">
             <dl className="-my-3 divide-y divide-gray-100 text-sm">
-              <MinutesLeft timeLeft={ageLeft} />
+              <HoursLeft timeLeft={ageLeft} />
             </dl>
           </div>
         </a>
