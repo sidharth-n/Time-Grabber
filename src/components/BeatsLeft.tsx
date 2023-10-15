@@ -16,14 +16,14 @@ const BeatsLeft: React.FC<BeatsLeftProps> = ({ timeLeft }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setBeatsLeft((prevBeats) => prevBeats - HEARTBEATS_PER_SECOND);
-    }, 1000);
+    }, 500);
 
     return () => {
       clearInterval(interval);
     };
   }, []);
 
-  return <>{beatsLeft.toLocaleString()}</>; // using toLocaleString to add commas for better readability
+  return <>{Math.ceil(beatsLeft).toLocaleString()}</>; // using toLocaleString to add commas for better readability
 };
 
 export default BeatsLeft;
