@@ -8,7 +8,7 @@ const App: React.FC = () => {
   const [inputAge, setInputAge] = useState(0);
 
   const handlePaste = (text: string) => {
-    const age = parseInt(text, 10); // Convert string to integer
+    const age = parseFloat(text); // Convert string to integer
 
     if (age >= 1 && age <= 120) {
       setInputValue(text);

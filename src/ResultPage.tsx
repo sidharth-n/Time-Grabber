@@ -11,7 +11,10 @@ interface Review {
 }
 
 const ResultPage: React.FC<{ age: number }> = ({ age }) => {
-  const maxAge = 70;
+  const maxAge = 73.16;
+  const progress = parseFloat(((age / maxAge) * 100).toFixed(1));
+
+  console.log(age, maxAge, progress);
   const ageLeft = maxAge - age;
   return (
     <div className="content-area flex flex-col justify-center items-stretch gap-4 p-4 pb-6">
@@ -23,8 +26,8 @@ const ResultPage: React.FC<{ age: number }> = ({ age }) => {
         />
 
         <div>
-          <h3 className="text-[20px] text-gray-900 ">Your Life Status</h3>
-          <dl className="mt-0.5 space-y-px text-[15px] text-gray-500">
+          <h3 className="text-[15px] text-gray-900 ">Your Life Status</h3>
+          <dl className="mt-0.5 space-y-px text-[12px] text-gray-500">
             <div className="flex flex-col">
               <dd className="inline">{`your age : ${age}`}</dd>
               <dd className="inline">current life expectancy : 73.16</dd>
@@ -43,9 +46,12 @@ const ResultPage: React.FC<{ age: number }> = ({ age }) => {
                 >
                   <span
                     className="block h-4 rounded-full bg-indigo-600 text-center text-[10px]/4"
-                    style={{ width: "50%" }}
+                    style={{ width: `${progress}%` }}
                   >
-                    <span className="font-bold text-white"> 50% </span>
+                    <span className="font-bold text-white">
+                      {" "}
+                      {`${progress}%`}{" "}
+                    </span>
                   </span>
                 </div>
               </div>
@@ -57,12 +63,6 @@ const ResultPage: React.FC<{ age: number }> = ({ age }) => {
         Remaining assets
       </h2>
       <div className="grid grid-cols-2 gap-4">
-        <a className="block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring">
-          <h2 className="mt-2 font-bold">Current age</h2>
-          <div className="flow-root mt-3">
-            <dl className="-my-3 divide-y divide-gray-100 text-sm">{age}</dl>
-          </div>
-        </a>
         <a className="block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring">
           <h2 className="mt-2 font-bold">Years left</h2>
           <div className="flow-root mt-3">
