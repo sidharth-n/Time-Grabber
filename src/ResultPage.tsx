@@ -25,8 +25,30 @@ const ResultPage: React.FC<{ age: number }> = ({ age }) => {
         <div>
           <h3 className="text-[20px] text-gray-900 ">Your Life Status</h3>
           <dl className="mt-0.5 space-y-px text-[15px] text-gray-500">
-            <div>
-              <dd className="inline">based on average lifespan : 70</dd>
+            <div className="flex flex-col">
+              <dd className="inline">{`your age : ${age}`}</dd>
+              <dd className="inline">current life expectancy : 73.16</dd>
+              <div>
+                <span id="ProgressLabel" className="sr-only">
+                  Loading
+                </span>
+
+                <div
+                  role="progressbar"
+                  aria-labelledby="ProgressLabel"
+                  aria-valuenow="50"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  className="block rounded-full bg-gray-200"
+                >
+                  <span
+                    className="block h-4 rounded-full bg-indigo-600 text-center text-[10px]/4"
+                    style={{ width: "50%" }}
+                  >
+                    <span className="font-bold text-white"> 50% </span>
+                  </span>
+                </div>
+              </div>
             </div>
           </dl>
         </div>
